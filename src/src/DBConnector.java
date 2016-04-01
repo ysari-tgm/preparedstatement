@@ -32,9 +32,9 @@ public class DBConnector {
 		    System.out.println("Verbindung erfolgreich!");
 		    c.close();
 		    System.out.println("Erfolgreich beendet!");
-	    } catch (SQLException e) {
-			// TODO Auto-generated catch block
+	    } catch (Exception e) {
 			e.printStackTrace();
+	    	//System.err.println("Verbindung gescheitert");
 		}
 	}
 }
