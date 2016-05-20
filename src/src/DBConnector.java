@@ -15,11 +15,12 @@ public class DBConnector {
 	 * Es wird eine Verbindung mit der Datenbank erstellt
 	 * 
 	 * @param	host	Hostname (IP-Adresse)
+	 * @param   port    Portadresse des Hosts
 	 * @param	db		Name der Datenbank
 	 * @param	user	Name des Benutzers
 	 * @param	pass	Passwort des Benutzers
 	 */
-	public DBConnector(String host, String db, String user, String pass){
+	public DBConnector(String host, int port, String db, String user, String pass){
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
@@ -27,7 +28,7 @@ public class DBConnector {
 			e.printStackTrace();
 		}
 	    try {
-			c = DriverManager.getConnection("jdbc:postgresql://" + host + "/" + db, user, pass);
+			c = DriverManager.getConnection("jdbc:postgresql://" + host + ":" + port + "/" + db, user, pass);
 		    c.setAutoCommit(false);
 		    System.out.println("Verbindung erfolgreich!");
 		    c.close();
