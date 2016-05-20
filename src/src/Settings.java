@@ -9,13 +9,13 @@ public class Settings {
 	@Parameter(names = "-p", description = "Port", required = false)
 	private String port;
 
-	@Parameter(names = "-d", description = "Host", required = true)
+	@Parameter(names = "-d", description = "Database", required = true)
 	private String database;
 
-	@Parameter(names = "-u", description = "Host", required = true)
+	@Parameter(names = "-u", description = "User", required = true)
 	private String user;
 
-	@Parameter(names = "-pw", description = "Host", required = true)
+	@Parameter(names = "-pw", description = "Password", required = true)
 	private String password;
 
 	/**
