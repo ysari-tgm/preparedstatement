@@ -10,32 +10,50 @@ import java.sql.*;
  */
 public class DBConnector {
 	private Connection c;
-	
+
 	/**
 	 * Es wird eine Verbindung mit der Datenbank erstellt
 	 * 
-	 * @param	host	Hostname (IP-Adresse)
-	 * @param   port    Portadresse des Hosts
-	 * @param	db		Name der Datenbank
-	 * @param	user	Name des Benutzers
-	 * @param	pass	Passwort des Benutzers
+	 * @param host
+	 *            Hostname (IP-Adresse)
+	 * @param port
+	 *            Portadresse des Hosts
+	 * @param db
+	 *            Name der Datenbank
+	 * @param user
+	 *            Name des Benutzers
+	 * @param pass
+	 *            Passwort des Benutzers
 	 */
-	public DBConnector(String host, int port, String db, String user, String pass){
+	public DBConnector(String host, int port, String db, String user, String pass) {
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    try {
+		try {
 			c = DriverManager.getConnection("jdbc:postgresql://" + host + ":" + port + "/" + db, user, pass);
-		    c.setAutoCommit(false);
-		    System.out.println("Verbindung erfolgreich!");
-		    c.close();
-		    System.out.println("Erfolgreich beendet!");
-	    } catch (Exception e) {
+			c.setAutoCommit(false);
+
+			System.out.println("Verbindung erfolgreich!");
+
+		} catch (Exception e) {
 			e.printStackTrace();
-	    	//System.err.println("Verbindung gescheitert");
 		}
+	}
+
+	public void closeConnection() {
+		try {
+			c.close();
+			System.out.println("Erfolgreich beendet!");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println("Verbindung gescheitert");
+		}
+	}
+
+	public Connection getConnection() {
+		return c;
 	}
 }
