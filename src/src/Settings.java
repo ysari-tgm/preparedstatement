@@ -7,7 +7,7 @@ public class Settings {
 	private String host;
 
 	@Parameter(names = "-p", required = false)
-	private String port;
+	private int port;
 
 	@Parameter(names = "-d", required = true)
 	private String database;
@@ -28,7 +28,7 @@ public class Settings {
 	/**
 	 * @return Portadresse des Hosts
 	 */
-	public String getPort() {
+	public int getPort() {
 		return port;
 	}
 
