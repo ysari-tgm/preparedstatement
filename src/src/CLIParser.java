@@ -28,6 +28,6 @@ public class CLIParser {
 		user = settings.getUser();
 		password = settings.getPassword();
 		
-		DBConnector conn = new DBConnector(host,port,user,user,password);
+		DBConnector conn = new DBConnector(host,port,database,user,password);
 	}
 }
