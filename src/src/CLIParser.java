@@ -1,5 +1,7 @@
 package src;
 
+import java.sql.Connection;
+
 import com.beust.jcommander.JCommander;
 
 /**
@@ -15,19 +17,29 @@ public class CLIParser {
 	private String database;
 	private String user;
 	private String password;
+	private DBConnector con;
 
 	public CLIParser(String input[]) {
 		port = 0;
 		Settings settings = new Settings();
 		JCommander cmd = new JCommander(settings, input);
-		String host = settings.getHost();
+		host = settings.getHost();
+		port = settings.getPort();
 		if (port == 0) {
 			port = 5432;
 		}
 		database = settings.getDatabase();
 		user = settings.getUser();
 		password = settings.getPassword();
-		
-		DBConnector conn = new DBConnector(host,port,database,user,password);
+
+		con = new DBConnector(host, port, database, user, password);
+	}
+
+	public Connection getConnection() {
+		Connection connector = con.getConnection();
+		return connector;
+	}
+	public void closeConnection(){
+		con.closeConnection();
 	}
 }
