@@ -1,9 +1,17 @@
 package src;
 
-public class main {
+/**
+ * Hier wird das Programm zum Laufen gebracht.
+ * Der CLI Parser wird aufgerufen, wodurch man sich mit dem DBConnecter zur
+ * Datenbank verbindet.
+ * Dannach werden die CRUD Befehle mithilfe von Prepared Statements ausgeführt.
+ * 
+ * @author Eren Sefer, Yunus Sari
+ * @version 2016-05-20
+ */
+public class Main {
 
 	public static void main(String[] args) {
-		DBConnector conn = new DBConnector("10.0.106.4",5432,"schokofabrik","schokouser","schokouser");
+		CLIParser cli = new CLIParser(args);
 	}
-
 }
