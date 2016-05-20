@@ -1,10 +1,16 @@
 package src;
 
 public class CRUD {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+		public void create(){
+			
+		}
+		public void read(){
+	
+		}
+		public void update(){
+	
+		}
+		public void delete(){
+	
+		}
 }
