@@ -3,51 +3,51 @@ package src;
 import com.beust.jcommander.Parameter;
 
 public class Settings {
-	@Parameter(names = "-h", description = "Host", required = true)
+	@Parameter(names = "-h", required = true)
 	private String host;
 
-	@Parameter(names = "-p", description = "Port", required = false)
+	@Parameter(names = "-p", required = false)
 	private String port;
 
-	@Parameter(names = "-d", description = "Database", required = true)
+	@Parameter(names = "-d", required = true)
 	private String database;
 
-	@Parameter(names = "-u", description = "User", required = true)
+	@Parameter(names = "-u", required = true)
 	private String user;
 
-	@Parameter(names = "-pw", description = "Password", required = true)
+	@Parameter(names = "-pw", required = true)
 	private String password;
 
 	/**
-	 * @return host
+	 * @return Hostname (IP-Adresse)
 	 */
 	public String getHost() {
 		return host;
 	}
 
 	/**
-	 * @return port
+	 * @return Portadresse des Hosts
 	 */
 	public String getPort() {
 		return port;
 	}
 
 	/**
-	 * @return database
+	 * @return Name der Datenbank
 	 */
 	public String getDatabase() {
 		return database;
 	}
 
 	/**
-	 * @return user
+	 * @return Name des Benutzers
 	 */
 	public String getUser() {
 		return user;
 	}
 
 	/**
-	 * @return password
+	 * @return Passwort des Benutzers
 	 */
 	public String getPassword() {
 		return password;
