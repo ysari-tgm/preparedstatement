@@ -17,6 +17,7 @@ public class Main {
 		Connection con = cli.getConnection();
 		CRUD crud = new CRUD(con);
 		crud.read(1);
+		crud.update("Yunus", "Sari", 2);
 		cli.closeConnection();
 	}
 }
