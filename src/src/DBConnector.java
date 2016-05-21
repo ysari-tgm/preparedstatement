@@ -29,7 +29,7 @@ public class DBConnector {
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Fehler beim Laden vom PostgreSQL Driver.");
 			e.printStackTrace();
 		}
 		try {
@@ -43,16 +43,24 @@ public class DBConnector {
 		}
 	}
 
+	/**
+	 * Die Verbindung dzu Datenbank wird sicher geschlossen.
+	 */
 	public void closeConnection() {
 		try {
 			c.close();
 			System.out.println("Erfolgreich beendet!");
 		} catch (Exception e) {
-			e.printStackTrace();
 			System.err.println("Verbindung gescheitert");
+			e.printStackTrace();
 		}
 	}
 
+	/**
+	 * Die Verbindung mit der Datenbank wird uebergeben.
+	 * 
+	 * @return Verbindung mit der Datenbank
+	 */
 	public Connection getConnection() {
 		return c;
 	}

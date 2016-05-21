@@ -2,6 +2,14 @@ package src;
 
 import com.beust.jcommander.Parameter;
 
+/**
+ * In dieser Klasse werden die Einstellungen(Optionen zum Auswaehlen) vom
+ * CLIParser gespeichert.
+ * 
+ * @author Yunus Sari, Eren Sefer
+ * @version 2016-05-21
+ *
+ */
 public class Settings {
 	@Parameter(names = "-h", required = true)
 	private String host;

@@ -5,7 +5,7 @@ import java.sql.Connection;
 import com.beust.jcommander.JCommander;
 
 /**
- * In dieser Klasse werden die Daten abgefragt, den Werten für die Verbindung
+ * In dieser Klasse werden die Daten abgefragt, den Werten fuer die Verbindung
  * mit der Datenbank zugewiesen und die Verbindung aufgebaut.
  * 
  * @author Eren Sefer, Yunus Sari
@@ -19,6 +19,13 @@ public class CLIParser {
 	private String password;
 	private DBConnector con;
 
+	/**
+	 * Die Eingaben des benutzers werden gespeichert und der DBConnetorklasse
+	 * uebergeben.
+	 * 
+	 * @param input
+	 *            Input des Benutzers wird uebergeben.
+	 */
 	public CLIParser(String input[]) {
 		port = 0;
 		Settings settings = new Settings();
@@ -35,11 +42,19 @@ public class CLIParser {
 		con = new DBConnector(host, port, database, user, password);
 	}
 
+	/**
+	 * Die Connection von der Klasse DBConnector wird uebergeben.
+	 */
 	public Connection getConnection() {
 		Connection connector = con.getConnection();
 		return connector;
 	}
-	public void closeConnection(){
+
+	/**
+	 * Die Methode closeConnection in der DBConnector-Klasse wird aufgerufen und
+	 * somit, die Verbindung beendet.
+	 */
+	public void closeConnection() {
 		con.closeConnection();
 	}
 }
