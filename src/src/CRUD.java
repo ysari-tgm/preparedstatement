@@ -8,6 +8,7 @@ import java.sql.SQLException;
 public class CRUD {
 	private String update = "UPDATE person SET vorname = ?, nachname = ? WHERE nummer = ?";
 	private String read = "SELECT * FROM person WHERE nummer = ?";
+	private String delete = "DELETE FROM person WHERE nummer = ?";
 	private Connection con;
 
 	public CRUD(Connection conn) {
@@ -56,7 +57,14 @@ public class CRUD {
 		}
 	}
 
-	public void delete() {
-
+	public void delete(int nummer) {
+		try {
+			PreparedStatement ps = con.prepareStatement(delete);
+			ps.setInt(1, nummer);
+			ps.executeUpdate();
+			System.out.println("Gelöscht.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

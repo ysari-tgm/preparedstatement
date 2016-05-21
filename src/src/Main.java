@@ -18,6 +18,7 @@ public class Main {
 		CRUD crud = new CRUD(con);
 		crud.read(1);
 		crud.update("Yunus", "Sari", 2);
+		crud.delete(3);
 		cli.closeConnection();
 	}
 }
