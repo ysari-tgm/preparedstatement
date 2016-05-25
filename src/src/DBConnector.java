@@ -3,7 +3,8 @@ package src;
 import java.sql.*;
 
 /**
- * Es wird eine Verbindung mit der Datenbank erstellt.
+ * Diese Klasse dient zur Schnittstelle zu einer (externen) Datenbank. Dient dazu
+ * eine Verbindung zu einer Datenbank zu ermoeglichen.
  * 
  * @author Eren Sefer, Yunus Sari
  * @version 2016-03-31
@@ -44,7 +45,7 @@ public class DBConnector {
 	}
 
 	/**
-	 * Die Verbindung dzu Datenbank wird sicher geschlossen.
+	 * Die Verbindung zur Datenbank wird sicher geschlossen.
 	 */
 	public void closeConnection() {
 		try {
