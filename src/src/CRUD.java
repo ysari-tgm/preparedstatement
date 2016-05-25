@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Die CRUD Befehle werden mit hilfe von Prepared Statemnets vorbereitet und in
+ * Die CRUD Befehle werden mithilfe von Prepared Statements vorbereitet und in
  * der Main Klasse ausgefuehrt. Tabelle, die modifiziert wird: Person;
  * 
  * 
