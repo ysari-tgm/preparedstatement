@@ -50,7 +50,7 @@ public class DBConnector {
 	public void closeConnection() {
 		try {
 			c.close();
-			System.out.println("Erfolgreich beendet!");
+			System.out.println("Verbindung sicher geschlossen!");
 		} catch (Exception e) {
 			System.err.println("Verbindung gescheitert");
 			e.printStackTrace();
